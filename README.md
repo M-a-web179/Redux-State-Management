@@ -73,3 +73,10 @@ export default defineConfig([
 ])
 
 ```
+---
+
+## How to run this project
+
+1. `npm install`
+2. `npm run dev`
+3. Open http://localhost:5173/ and open the browser console to see redux-logger output.

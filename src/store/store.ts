@@ -1,6 +1,8 @@
 import { applyMiddleware, createStore } from 'redux';
-import logger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import { rootReducer, type RootState } from './reducers';
+
+const logger = createLogger();
 
 export const store = createStore(rootReducer, undefined, applyMiddleware(logger));
 

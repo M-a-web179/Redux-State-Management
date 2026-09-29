@@ -1,7 +1,7 @@
 import { INCREMENT, DECREMENT, RESET } from "../actions/counterActions";
 import type { CounterAction } from "../actions/counterActions";
 
-interface CounterState {
+export interface CounterState {
   value: number;
 }
 

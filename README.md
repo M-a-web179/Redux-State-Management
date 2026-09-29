@@ -1,82 +1,78 @@
-# React + TypeScript + Vite
+# Redux State Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React and TypeScript counter application built to practice manual Redux state management.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Global counter state managed with Redux
+- Increment counter action
+- Decrement counter action
+- Reset counter action
+- Redux `Provider` integration
+- `useSelector` for reading Redux state
+- `useDispatch` for dispatching Redux actions
+- `combineReducers` for the root reducer
+- `redux-logger` middleware for tracking state changes in the browser console
+- TypeScript types for Redux state and actions
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Redux
+- React Redux
+- Redux Logger
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── actions/
+│   └── counterActions.ts
+├── components/
+│   └── Counter.tsx
+├── reducers/
+│   ├── counterReducer.ts
+│   └── index.ts
+├── store/
+│   └── store.ts
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## How to Run the Project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone this repository:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/M-a-web179/Redux-State-Management.git
 ```
----
 
-## How to run this project
+2. Open the project folder:
 
-1. `npm install`
-2. `npm run dev`
-3. Open http://localhost:5173/ and open the browser console to see redux-logger output.
+```bash
+cd Redux-State-Management
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+5. Open the URL shown in the terminal or use the **Ports** tab in GitHub Codespaces.
+
+## Testing Redux Logger
+
+1. Run the application.
+2. Open the browser Developer Tools.
+3. Open the Console tab.
+4. Click Increment, Decrement, or Reset.
+5. Observe the Redux actions and previous/next state logged by `redux-logger`.

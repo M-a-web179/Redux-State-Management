@@ -2,16 +2,20 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
 
-interface IncrementAction {
+export interface IncrementAction {
   type: typeof INCREMENT;
 }
 
-interface DecrementAction {
+export interface DecrementAction {
   type: typeof DECREMENT;
 }
 
-interface ResetAction {
+export interface ResetAction {
   type: typeof RESET;
 }
+
+export const increment = (): IncrementAction => ({ type: INCREMENT });
+export const decrement = (): DecrementAction => ({ type: DECREMENT });
+export const reset = (): ResetAction => ({ type: RESET });
 
 export type CounterAction = IncrementAction | DecrementAction | ResetAction;
